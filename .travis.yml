@@ -5,8 +5,8 @@ services:
   - docker
   
 before_install:
-  - docker build -t Sri554278/docker-react-git -f Dockerfile.dev .
+  - docker build -t sri554278/docker-react-git -f Dockerfile.dev .
   
 script:
-  - docker run -e CI=true Sri554278/docker-react-git npm run test
+  - docker run -e CI=true sri554278/docker-react-git npm run test
   
