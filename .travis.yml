@@ -10,3 +10,14 @@ before_install:
 script:
   - docker run -e CI=true sri554278/docker-react-git npm run test
   
+deploy:
+  provider: elasticbeanstack
+  region: "us-east-1"
+  app: "docker-react-git"
+  env: "DockerReactGit-env"
+  bucket_name: "elasticbeanstalk-us-east-1-934201206655"
+  bucket_path: "docker-react-git"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY    
